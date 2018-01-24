@@ -33,6 +33,7 @@ public class SaldoDao {
 	}
 	
 	// Non dovrebbe servirci
+	@SuppressWarnings("unchecked")
 	public List<Saldo> findByNdg(String ndg) {
 		em = null;
 		List<Saldo> s = null;
@@ -47,7 +48,7 @@ public class SaldoDao {
 		return s;
 	}
 
-	// Non dovrebbe servirci
+	@SuppressWarnings("unchecked")
 	public List<Saldo> findByCodTitolo(String codTitolo) {
 		em = null;
 		List<Saldo> s = null;
@@ -101,6 +102,7 @@ public class SaldoDao {
 		return saldi;		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Saldo> findByIdPtf(Integer id) {
 		em = null;
 		List<Saldo> saldi = null;

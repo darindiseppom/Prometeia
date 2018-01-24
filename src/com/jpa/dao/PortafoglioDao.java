@@ -44,6 +44,7 @@ public class PortafoglioDao {
 		return portafoglio;		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Portafoglio> findAll() {
 		em = null;
 		List<Portafoglio> clienti = null;

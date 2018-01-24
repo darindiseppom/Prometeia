@@ -25,6 +25,7 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 
 	private Class<T> type;
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public GenericDaoImpl() {
 		Type t = getClass().getGenericSuperclass();
 		ParameterizedType pt = (ParameterizedType) t;
@@ -50,26 +51,13 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 		return this.em.merge(t);
 	}
 
-	/**
-	 * Metodo per la gestione della tipica findAll tramite CriteriaQuery.
-	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override public List<T> findAll() {
-
-		// Step1: ottenimento del CriteriaBuilder dall'EntityManager. 
+ 
 		CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
 		
-		/*
-		 * Step1: ottenimento della CriteriaQuery dal CriteriaBuilder.
-		 * Rappresenta una query (select fino alla versione 2.0, insert/update dalla 2.1) JPQL.
-		 * Modella ogni possibile clausola per una query JPQL.
-		 *  
-		 */
 		CriteriaQuery criteriaQuery = criteriaBuilder.createQuery(type);
 
-		/*
-		 * Step 2. Creazione del criteria root per definire la root entity a partire dalla quale
-		 * ha origine la navigazione. 
-		 */
 		Root root = criteriaQuery.from(type);
 		
 		
@@ -77,12 +65,4 @@ public class GenericDaoImpl<T> implements GenericDao<T> {
 
 		return em.createQuery(criteriaQuery).getResultList();
 	}
-
-	/**
-	 * Query generica per attivare filtri tramite Criteria.
-	 * 
-	 * @param filters
-	 * @return
-	 */
-
 }

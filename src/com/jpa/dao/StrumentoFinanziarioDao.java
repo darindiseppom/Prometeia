@@ -54,6 +54,7 @@ public class StrumentoFinanziarioDao {
 		return str_fin;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<StrumentoFinanziario> findAll() {
 		em = null;
 		List<StrumentoFinanziario> strumentiFinanziari = null;

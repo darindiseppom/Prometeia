@@ -60,6 +60,7 @@ public class SerieStoricaDao {
 		return serieStorica;		
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<SerieStorica> findAll() {
 		em = null;
 		List<SerieStorica> serieStorica = null;
@@ -87,6 +88,7 @@ public class SerieStoricaDao {
 		return s;		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<SerieStorica> findByCodice(String d) {
 		em = null;
 		List<SerieStorica> s = null;
@@ -101,6 +103,7 @@ public class SerieStoricaDao {
 		return s;		
 	}
 	
+	@SuppressWarnings("unchecked")
 	public SerieStorica findRecente(String cod) {
 		em = null;
 		List<SerieStorica> s = null;
