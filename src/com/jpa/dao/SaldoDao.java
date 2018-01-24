@@ -5,12 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
-import com.jpa.entities.Cliente;
-import com.jpa.entities.Portafoglio;
 import com.jpa.entities.Saldo;
 import com.jpa.entities.SaldoPk;
-import com.jpa.entities.SerieStorica;
 import com.jpa.utils.JpaUtils;
 
 public class SaldoDao {	

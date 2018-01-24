@@ -1,23 +1,17 @@
-
 package com.jpa.servlets;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jpa.dao.ClienteDao;
 import com.jpa.dao.SerieStoricaDao;
-import com.jpa.entities.Cliente;
 import com.jpa.entities.SeriePk;
 import com.jpa.entities.SerieStorica;
 
