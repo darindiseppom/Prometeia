@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jpa.dao.ClienteDao;
 import com.jpa.dao.SerieStoricaDao;
 import com.jpa.entities.Cliente;
