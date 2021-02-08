@@ -20,11 +20,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package 
-      - run: |
-          ls -l
-          ls -l target/
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: test-0.0.1-SNAPSHOT.war
-          path: target/test-0.0.1-SNAPSHOT.war
+          path: target/test-*.war
