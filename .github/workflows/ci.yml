@@ -28,5 +28,5 @@ jobs:
         run: |
           curl -X POST 
           -H 'Content-type: application/json' 
-          --data '{"text":"Bella, fra!"}' 
-          ${{ secrets.SLACK_WEBHOOK }}
+          --data '{"text":"Bella, fra!"}' ${{ 
+          secrets.SLACK_WEBHOOK }}
