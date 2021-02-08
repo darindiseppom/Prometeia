@@ -24,3 +24,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: target/test-*.war
+      - name: Slack notification
+        run: |
+          curl -X POST 
+          -H 'Content-type: application/json' 
+          --data '{"text":"Bella, fra!"}' 
+          ${{ secrets.SLACK_WEBHOOK }}
