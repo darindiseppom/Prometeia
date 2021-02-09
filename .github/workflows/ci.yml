@@ -28,6 +28,7 @@ jobs:
           path: target/test-*.war
       - name: Slack notification
         run: |
-          curl -X POST 
-          -H 'Content-type: application/json' 
-          --data '{"text":"Bella, fra!"}' ${{ env.SLACK_WEBHOOK }}
+          curl -X POST \
+          --url ${{ env.SLACK_WEBHOOK }} \
+          --header 'Content-type: application/json' \
+          --data '{"text":"Bella, fra!"}'
